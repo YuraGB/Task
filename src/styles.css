@@ -1,1 +1,97 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body, html{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-image: url("assets/bg.png");
+  height: 100vh;
+  min-width: 1000px;
+}
+
+article{
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card {
+  margin-top: 1vw;
+  width: 150px;
+  position: relative;
+}
+
+
+.rating {
+  position: relative;
+  width: 111px;
+}
+
+
+.rating-slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: dodgerBlue;
+}
+
+.rating-stars {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: -15px;
+}
+
+.rating-stars-slider {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.rating-stars span {
+  font-size: 0;
+  width: 19px;
+  height: 18px;
+  display: inline-block;
+
+  background-image: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+  clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+}
+
+.rating-stars-placehold > span {
+  background: gray;
+}
+
+.rating-stars-slider {
+  overflow: hidden;
+}
+
+.rating-stars-slider > span {
+  background: dodgerBlue;
+}
+
+.rating-gauge {
+  display: none;
+}
+
+
+.content, app-card{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80vw;
+  min-width: 1000px;
+
+}
+
+.rating span:hover{
+  cursor: pointer;
+}
+
+mat-card {
+  height: 40vh;
+  min-height: 400px;
+}
+

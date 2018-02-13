@@ -1,20 +1,80 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<header>
+  <img src="assets/main.png" alt="*">
+  <h2>Мир моторных масел</h2>
+</header>
+<main>
+  <article>
+   <nav>
+     <!-- Place for filter buttons  for  future
+        <mat-accordion>
+            <mat-expansion-panel>
+                 <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Фильтр поиска масел
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="checkbx">
+                    <mat-checkbox>Apolo</mat-checkbox>
+                    <mat-checkbox>Check me!</mat-checkbox>
+                    <mat-checkbox>Check me!</mat-checkbox>
+                    <mat-checkbox>Check me!</mat-checkbox>
+                  </div>
+                  <mat-form-field class="example-margin">
+                    <input matInput type="number" placeholder="цена от" [(ngModel)]="min">
+                  </mat-form-field>
+                  <mat-form-field class="example-margin">
+                    <input matInput type="number" placeholder="цена до" [(ngModel)]="max">
+                  </mat-form-field>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Фильтр поиска Инструментов
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="checkbx">
+                    <mat-checkbox>Check me!</mat-checkbox>
+                    <mat-checkbox>Check me!</mat-checkbox>
+                    <mat-checkbox>Check me!</mat-checkbox>
+                    <mat-checkbox>Check me!</mat-checkbox>
+                  </div>
+                  <mat-form-field class="example-margin">
+                    <input matInput type="number" placeholder="цена от" [(ngModel)]="min">
+                  </mat-form-field>
+                  <mat-form-field class="example-margin">
+                    <input matInput type="number" placeholder="цена до" [(ngModel)]="max">
+                  </mat-form-field>
+                </mat-expansion-panel>
+              </mat-accordion>-->
+     <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+         Информационная панель
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="checkbx">
+        <button mat-raised-button (click)="toggle()">Информация о фирме</button>
+      </div>
+      </mat-expansion-panel>
+     <mat-list role="list" [@showInfo]="stateMent">
+       <mat-list-item role="listitem">Адресс: {{contacts.Address}}</mat-list-item>
+       <mat-list-item role="listitem">e-mail: {{contacts.eMail}}</mat-list-item>
+       <mat-list-item role="listitem">Телефон: {{contacts.phone}}</mat-list-item>
+       <mat-list-item role="listitem">Директор: {{contacts.director}}</mat-list-item>
+       <mat-list-item role="listitem">Менеджеры: {{contacts.managers}}</mat-list-item>
+     </mat-list>
+    </nav>
+    <section class="tabs">
+      <div class="button-row">
+        <a mat-raised-button routerLink="/AllGoods">Все товары<i>{{sumOfAllGoods}}</i></a>
+        <a mat-raised-button routerLink="/mMassels">Моторыне масла<i>{{sumOfmMassels}}</i></a>
+        <a mat-raised-button routerLink="/tMassels">Трансмиссионные масла<i>{{sumOftMassels}}</i></a>
+        <a mat-raised-button routerLink="/gMassels">Гидравлические масла<i>{{sumOfgMassels}}</i></a>
+        <a mat-raised-button routerLink="/bMassels">Масла для мототехники<i>{{sumOfbMassels}}</i></a>
+        <a mat-raised-button routerLink="/instruments">Инструменты<i>{{sumOfinstruments}}</i></a>
+      </div>
+    </section>
+    <router-outlet></router-outlet>
+  </article>
+</main>
+<footer><em>Maded By Me All rights reservered</em></footer>

@@ -1,0 +1,9 @@
+mat-card-header {
+  height: 50px;
+  width: 110%;
+  text-align: -webkit-center;
+}
+
+mat-card:hover {
+  cursor: pointer;
+}

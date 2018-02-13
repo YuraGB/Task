@@ -1,0 +1,77 @@
+<section class="item">
+  <mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile  [colspan]="1"
+                    [rowspan]="3"><img src={{good.cardPhoto}} alt={{good.name}} (click)="openDialog()"></mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="2"
+      [rowspan]="3.5">
+      <section class="buy">
+        <div class="deliver">
+          <p>Доставка:</p>
+          <p>доставка ТзОВ "Новая почта" - 70</p>
+          <p>доставка ТзОВ "Мист Экспресс" - 70</p>
+        </div>
+        <div class="guaranty">
+          Гарантия :
+          <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam beatae deleniti deserunt ea et
+            excepturi fugit hic incidunt pariatur quasi quo sit vel, voluptatem? Alias cupiditate earum praesentium
+            quibusdam rem!
+          </div>
+          <div>Accusantium architecto blanditiis fugiat libero nemo neque quas quis rerum ut vitae. Assumenda ea eos
+            error harum laboriosam magnam natus officia optio, porro sed? Asperiores excepturi in omnis soluta veniam.
+          </div>
+          <div>Accusantium deserunt nihil officiis quae sunt unde voluptas. Aperiam asperiores blanditiis consequuntur
+            dicta enim esse eum fuga, fugiat id laborum magni molestias nam nobis odio quaerat quas rerum saepe,
+            voluptatibus?
+          </div>
+        </div>
+        <div>
+        <h2>Цена : {{good.price}}</h2>
+          <app-button-buy></app-button-buy>
+        </div>
+      </section>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="0.5"> Оценка:
+      <app-raiting [good]="good"></app-raiting>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="3"
+                   [rowspan]="6">
+      <mat-card>
+        <mat-card-content>
+          <mat-tab-group class="demo-tab-group">
+            <mat-tab label="Описание">
+              <div class="demo-tab-content">
+               {{good.description}}
+              </div>
+            </mat-tab>
+            <mat-tab label="Характеристики">
+              <div class="demo-tab-content">
+                <mat-list >
+                <div *ngFor="let item of good.characteristics">
+                  <mat-list-item>{{item}}</mat-list-item>
+                  <mat-divider></mat-divider>
+                 </div>
+                </mat-list>
+              </div>
+            </mat-tab>
+            <mat-tab label="Отзывы">
+              <div class="demo-tab-content">
+                <mat-list >
+                  <div *ngFor="let item of good.recommendations">
+                    <mat-list-item>Автор: {{item.Author}}</mat-list-item>
+                    <blockquote><em>"{{item.text}}"</em></blockquote>
+                    <mat-divider></mat-divider>
+                  </div>
+                </mat-list>
+              </div>
+            </mat-tab>
+            <mat-tab label="Обзоры">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/6wD4V0rvlDI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </mat-tab>
+          </mat-tab-group>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>
